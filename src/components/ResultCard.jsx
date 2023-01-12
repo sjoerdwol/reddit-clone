@@ -8,7 +8,7 @@ export function ResultCard() {
           Title
         </div>
         <div className='px-3'>
-          <img src={img} alt="Image of post" className='rounded-lg' />
+          <img src={img} alt="Image of post" className='max-h-44 max-w-60 rounded-lg xl:max-h-52 xl:max-w-64' />
         </div>
         <div className='flex gap-14 mt-auto mb-4 xl:gap-24'>
           <span>8 hours ago</span>
