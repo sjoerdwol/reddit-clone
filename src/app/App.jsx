@@ -1,5 +1,6 @@
 import { NavBar } from "../components/NavBar"
 import { SearchBar } from "../components/SearchBar"
+import { Startpage } from "../components/Startpage"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <div>
       <NavBar />
       <SearchBar />
+      <Startpage />
     </div>
   )
 }
