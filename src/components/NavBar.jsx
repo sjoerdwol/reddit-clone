@@ -3,7 +3,7 @@ import { AiOutlineReddit } from 'react-icons/ai';
 export function NavBar() {
 
   return (
-    <header className='flex flex-col gap-3 py-5 items-center shadow-header shadow-white lg:gap-5 lg:py-7 2xl:gap-7 2xl:py-9'>
+    <header className='flex flex-col gap-3 py-5 items-center shadow-white lg:gap-5 lg:py-7 2xl:gap-7 2xl:py-9'>
       <div className='flex items-center gap-2'>
         <AiOutlineReddit className='text-2xl text-green-600 lg:text-4xl 2xl:text-6xl' />
         <div className='font-bold lg:text-2xl 2xl:text-4xl'>

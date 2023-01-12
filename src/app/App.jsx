@@ -1,6 +1,7 @@
 import { NavBar } from "../components/NavBar"
 import { SearchBar } from "../components/SearchBar"
 import { Startpage } from "../components/Startpage"
+import { SearchResults } from "../features/SearchResults"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <NavBar />
       <SearchBar />
       <Startpage />
+      <SearchResults />
     </div>
   )
 }
