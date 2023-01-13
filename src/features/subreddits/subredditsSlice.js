@@ -7,13 +7,14 @@ const initialState = {
   results: [],
   hasResult: false,
   isLoading: false,
-  error: false
+  error: false,
+  currentSubreddit: ''
 }
 
 // create async thunk
 export const fetchSubreddit = createAsyncThunk('subreddits/fetchSubreddit', async (subreddit) => {
   const results = await getSubreddit(subreddit)
-  return results;
+  return {subreddit, results: results};
 })
 
 // create and export slice
@@ -25,7 +26,8 @@ export const subredditsSlice = createSlice({
       state.results = [],
       state.isLoading = false,
       state.hasResult = false,
-      state.error = false
+      state.error = false,
+      state.currentSubreddit = ''
     }
   },
   extraReducers: {
@@ -35,10 +37,11 @@ export const subredditsSlice = createSlice({
       state.error = false
     },
     [fetchSubreddit.fulfilled]: (state, action) => {
-      state.results = action.payload;
+      state.results = action.payload.results;
       state.hasResult = true,
       state.isLoading = false,
-      state.error = false
+      state.error = false,
+      state.currentSubreddit = action.payload.subreddit
     },
     [fetchSubreddit.rejected]: (state, action) => {
       state.isLoading = false,
@@ -53,6 +56,7 @@ export const selectSubredditIsLoading = state => state.subreddits.isLoading;
 export const selectSubredditHasResult = state => state.subreddits.hasResult;
 export const selectSubredditError = state => state.subreddits.error;
 export const selectSubredditResults = state => state.subreddits.results;
+export const selectCurrentSubreddit = state => state.subreddits.currentSubreddit;
 
 export const { resetSubreddit } = subredditsSlice.actions;
 export default subredditsSlice.reducer;
