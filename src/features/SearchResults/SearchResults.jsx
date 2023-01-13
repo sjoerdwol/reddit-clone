@@ -1,13 +1,23 @@
 import { ResultCard } from "../../components/ResultCard"
 import { useSelector } from "react-redux"
-import { selectResults } from "./searchResultsSlice"
+import { selectSearchResults } from "./searchResultsSlice"
+import { selectSubredditResults } from "../subreddits/subredditsSlice";
 
 export function SearchResults() {
-  const results = useSelector(selectResults);
+  const searchResults = useSelector(selectSearchResults);
+  const subredditResults = useSelector(selectSubredditResults);
+
+  const results = () => {
+    if(searchResults.length) {
+      return searchResults;
+    } else {
+      return subredditResults;
+    }
+  }
 
   return (
     <div className='flex flex-col md:flex-row md:flex-wrap md:justify-center xl:px-5'>
-      {results.map(result => {
+      {results().map(result => {
         return <ResultCard key={result.id} result={result}/>
       })}
     </div>

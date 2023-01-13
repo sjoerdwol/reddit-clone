@@ -8,3 +8,16 @@ export const getSearchResults = async (searchterm) => {
 
   return json.data.children.map((post) => post.data);
 };
+
+export const getSubreddit = async (subreddit) => {
+  let requestedReddit = subreddit.toLowerCase();
+  
+  if(requestedReddit === 'celebrity') {
+    requestedReddit = 'celebrities';
+  }
+
+  const response = await fetch(`${API_ROOT}/r/${requestedReddit}.json`);
+  const json = await response.json();
+
+  return json.data.children.map((post) => post.data);
+};

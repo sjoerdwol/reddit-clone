@@ -21,7 +21,7 @@ export const searchResultsSlice = createSlice({
   name: 'searchResults',
   initialState: initialState,
   reducers: {
-    resetState: (state, action) => {
+    resetSearch: (state, action) => {
       state.results = [],
       state.isLoading = false,
       state.hasResult = false,
@@ -49,10 +49,10 @@ export const searchResultsSlice = createSlice({
 });
 
 // create and export selectors
-export const selectIsLoading = state => state.searchResults.isLoading;
-export const selectHasResult = state => state.searchResults.hasResult;
-export const selectError = state => state.searchResults.error;
-export const selectResults = state => state.searchResults.results;
+export const selectSearchIsLoading = state => state.searchResults.isLoading;
+export const selectSearchHasResult = state => state.searchResults.hasResult;
+export const selectSearchError = state => state.searchResults.error;
+export const selectSearchResults = state => state.searchResults.results;
 
-export const { resetState } = searchResultsSlice.actions;
+export const { resetSearch } = searchResultsSlice.actions;
 export default searchResultsSlice.reducer;
