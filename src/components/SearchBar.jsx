@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchResults } from "../features/SearchResults/searchResultsSlice";
+import { resetSearch } from "../features/SearchResults/searchResultsSlice";
+import { resetSubreddit } from "../features/subreddits/subredditsSlice";
 
 import { HiOutlineSearch } from 'react-icons/hi';
 
@@ -13,7 +15,13 @@ export function SearchBar() {
   }
 
   const handleDispatch = () => {
+    handleReset();
     dispatch(fetchResults(term));
+  }
+
+  const handleReset = () => {
+    dispatch(resetSearch());
+    dispatch(resetSubreddit());
   }
 
   return (

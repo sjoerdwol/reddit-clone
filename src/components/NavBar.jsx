@@ -13,6 +13,7 @@ export function NavBar() {
   }
 
   const handleSubredditCall = (e) => {
+    handleReset();
     dispatch(fetchSubreddit(e.target.innerHTML));
   }
 
