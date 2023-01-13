@@ -13,7 +13,7 @@ export function ResultCard(props) {
           {title}
         </div>
         <div className='px-3'>
-          <img src={props.result.url} alt="Image of post" className='max-h-44 max-w-60 rounded-lg xl:max-h-48 xl:max-w-64' />
+          <img src={props.result.thumbnail} alt="Image of post" className='max-h-40 w-60 rounded-lg xl:max-h-48 xl:w-64' />
         </div>
         <div className='flex gap-14 mt-auto mb-4 xl:gap-18'>
           <span>{moment.unix(props.result.created_utc).fromNow()}</span>

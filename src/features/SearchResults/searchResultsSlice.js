@@ -20,7 +20,14 @@ export const fetchResults = createAsyncThunk('searchResults/fetchResults', async
 export const searchResultsSlice = createSlice({
   name: 'searchResults',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    resetState: (state, action) => {
+      state.results = [],
+      state.isLoading = false,
+      state.hasResult = false,
+      state.error = false
+    }
+  },
   extraReducers: {
     [fetchResults.pending]: (state, action) => {
       state.isLoading = true,
@@ -47,4 +54,5 @@ export const selectHasResult = state => state.searchResults.hasResult;
 export const selectError = state => state.searchResults.error;
 export const selectResults = state => state.searchResults.results;
 
+export const { resetState } = searchResultsSlice.actions;
 export default searchResultsSlice.reducer;
