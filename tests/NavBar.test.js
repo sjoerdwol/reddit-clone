@@ -42,7 +42,7 @@ describe('NavBar Component', () => {
   it('NavBar Navigation Item calls subreddit render on click', () => {
     render(<NavBar />);
 
-    const navbar_navigation_item = screen.getByTestId('navbar_navigation_item');
+    const navbar_navigation_item = screen.getAllByTestId('navbar_navigation_item')[0];
     const navbar_navigation_item_onclick = navbar_navigation_item.onclick;
     fireEvent.click(navbar_navigation_item);
 

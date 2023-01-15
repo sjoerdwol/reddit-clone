@@ -19,10 +19,10 @@ export function SearchResults() {
 
   return (
     <div className='flex flex-col text-center'>
-      <span className='font-bold text-2xl mb-1 text-green-600 xl:text-5xl'>{title && title}</span>
+      <span className='font-bold text-2xl mb-1 text-green-600 xl:text-5xl' data-testid='subreddit_title'>{title && title}</span>
       <div className='flex flex-col text-start md:flex-row md:flex-wrap md:justify-center xl:px-5'>
         {results().map(result => {
-          return <ResultCard key={result.id} result={result}/>
+          return <ResultCard key={result.id} result={result} />
         })}
       </div>
     </div>

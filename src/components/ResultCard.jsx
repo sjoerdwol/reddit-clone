@@ -7,7 +7,7 @@ export function ResultCard(props) {
   }
 
   return (
-    <div className='flex justify-center px-5 pt-7 last:pb-7 xl:pt-10'>
+    <div className='flex justify-center px-5 pt-7 last:pb-7 xl:pt-10' data-testid='result_card'>
       <div className='bg-zinc-800 flex flex-col items-center h-72 rounded-3xl w-72 xl:h-80 xl:w-80'>
         <div className='p-3 font-medium text-xl' data-testid='card_title'>
           {title}

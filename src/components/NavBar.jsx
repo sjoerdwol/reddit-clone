@@ -28,10 +28,10 @@ export function NavBar() {
       <nav>
         <ul className='flex gap-5 font-semibold md:text-lg lg:gap-7 lg:text-xl 2xl:text-3xl' data-testid='navbar_navigation'>
           <li className='hover:cursor-pointer' onClick={handleSubredditCall} data-testid='navbar_navigation_item'>Popular</li>
-          <li className='hover:cursor-pointer' onClick={handleSubredditCall}>Gaming</li>
-          <li className='hover:cursor-pointer' onClick={handleSubredditCall}>Sports</li>
-          <li className='hidden hover:cursor-pointer md:block' onClick={handleSubredditCall}>Television</li>
-          <li className='hidden hover:cursor-pointer md:block' onClick={handleSubredditCall}>Celebrity</li>
+          <li className='hover:cursor-pointer' onClick={handleSubredditCall} data-testid='navbar_navigation_item'>Gaming</li>
+          <li className='hover:cursor-pointer' onClick={handleSubredditCall} data-testid='navbar_navigation_item'>Sports</li>
+          <li className='hidden hover:cursor-pointer md:block' onClick={handleSubredditCall} data-testid='navbar_navigation_item'>Television</li>
+          <li className='hidden hover:cursor-pointer md:block' onClick={handleSubredditCall} data-testid='navbar_navigation_item'>Celebrity</li>
         </ul>
       </nav>
     </header>
